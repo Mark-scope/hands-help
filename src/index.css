@@ -73,12 +73,12 @@ z-index: 49;
 /* Light theme  */
 @layer base {
   :root {
-    --color-bg: 227 227 227;
+    --color-bg: 250 251 254;
     --color-primary: 255 255 255;
     --color-secondary:255 255 255;
     --color-ascent1: 0 0 0;
     --color-ascent2: 89 91 100;
-    --color-blue: 6 90 216;
+    --color-blue: 18 32 103;
     --color-white: 255 255 255;
 
   }
@@ -89,7 +89,7 @@ z-index: 49;
     --color-secondary: 47 45 48;
     --color-ascent1: 255 255 255;
     --color-ascent2: 164 161 162;
-    --color-blue: 6 90 216;
+    --color-blue: 72 121 228;
     /* //16 176 255; */
     --color-white: 255 255 255;
   }

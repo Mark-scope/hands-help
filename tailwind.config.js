@@ -13,6 +13,9 @@ module.exports = {
         2: "rgb(var(--color-ascent2) / <alpha-value>)",
       },
     },
+    fontFamily: {
+      'poppins' : 'poppins'
+    },
     screens: {
       sm: "640px",
 

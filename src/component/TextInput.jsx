@@ -1,7 +1,7 @@
 import React from 'react'
 
 const TextInput = React.forwardRef( ({
-     type, placeholder, styles, label, labelStyles, register, name, error
+    type, placeholder, icon, styles, label, labelStyles, register, name, error
 }, ref ) => {
    
 
@@ -10,19 +10,20 @@ const TextInput = React.forwardRef( ({
          {/* If label exist show it else don't */}
         {label && <p className={`text-ascent-2 text-sm mb-2 ${labelStyles}`}>{label}</p>}
 
-        <div>
+        <div className='bg-[#FAFBFE] rounded-lg border border-[#888FB3] flex items-center pl-3 overflow-hidden'>
+            {icon && icon}
             <input 
             type={type} 
             name={name} 
             placeholder={placeholder} 
             ref={ref} 
-            className={`${styles} bg-secondary rounded border border-[#66666690] outline-none text-sm text-ascent-1 px-4 py-3 placeholder:text-[#666]`}
+            className={`${styles} bg-[#FAFBFE] outline-none text-base text-ascent-2 px-4 py-5 placeholder:text-[#616A9A]`}
            {...register}
            aria-invalid={error ? "true" : "false"}
            />
         </div>
         {error && (
-            <span className='text-xs text-[#f64949fe] mt-0.5'>{error}</span>
+            <span className='text-sm text-[#f64949fe] mt-0.5'>{error}</span>
         )}
         
     </div>
