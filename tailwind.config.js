@@ -4,11 +4,13 @@ module.exports = {
   theme: {
     colors: {
       bgColor: "rgb(var(--color-bg) / <alpha-value>)",
+      bgColor1: "#FAFAFA",
       primary: "rgb(var(--color-primary) / <alpha-value>)",
       secondary: "rgb(var(--color-secondary) / <alpha-value>)",
       blue: "#122067",
       white: "rgb(var(--color-white) / <alpha-value>)",
       LGray: "#969696",
+      Red: "#D32B3F",
       ascent: {
         1: "rgb(var(--color-ascent1) / <alpha-value>)",
         2: "rgb(var(--color-ascent2) / <alpha-value>)",

@@ -94,3 +94,12 @@ z-index: 49;
     --color-white: 255 255 255;
   }
 }
+
+@layer components {
+  span{
+      color: #373737;
+      font-size: 16px;
+      font-weight: 400;
+      word-wrap: break-word;
+  }
+}
