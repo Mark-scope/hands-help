@@ -16,9 +16,9 @@ const ProfilePopUp = () => {
 
       {/* Middle  */}
       <div className="px-4 font-semibold mt-6 mb-2">
-        <Link to='/settings' className="flex items-center gap-3 hover:bg-[#E8E8E9] px-4 py-3 cursor-pointer">
+        <Link to='/volunteer-dashboard/settings' className="flex items-center gap-3 hover:bg-[#E8E8E9] px-4 py-3 cursor-pointer">
           <AiOutlineSetting size={25} className="text-[#646E80]" />
-          <span>Profile</span>
+          <span>Account Settings</span>
         </Link>
       </div>
       <div className='pt-2 border-t border-[#bbbbbb] px-4'>

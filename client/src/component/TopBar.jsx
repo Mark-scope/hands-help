@@ -33,32 +33,34 @@ const TopBar = () => {
 
   return (
     <div className='flex justify-between items-center relative '>
-      <img src={logo} className='w-[100px]' />
+      <Link to='/volunteer-dashboard'>
+         <img src={logo} className='w-[100px]' />
+      </Link>
 
-      <div className='flex gap-8 py-2 px-2 bg-white rounded-full sd'>
+      {/* <div className='lg:flex lg:gap-8 gap-2 py-2 px-2 bg-white rounded-full sd hidden'>
         <div className='bg-[#373737] text-white flex gap-4 items-center py-2 px-5 rounded-full cursor-pointer'>
           <BsCameraVideo size={20} />
           <Link to='/Makeacall' state={{volunteer: true}}>
-          <span className='text-white font-semibold text-lg'>Call Volunteer</span>
+          <span className='text-white font-semibold lg:text-lg'>Call Volunteer</span>
         </Link>
         </div>
         <div className='bg-[#373737] text-white flex gap-4 items-center py-2 px-5 rounded-full cursor-pointer'>
           <BsPeople size={20} data-tooltip-id='profile' />
-          <span className='text-white font-semibold text-lg'>Community</span>
+          <span className='text-white font-semibold lg:text-lg'>Community</span>
         </div>
-      </div>
+      </div> */}
 
-      <div className='flex gap-5'>
-        <div 
+      <div className='flex items-center lg:gap-5 gap-2'>
+        <Link to='/volunteer-dashboard/contact'
         data-tooltip-id='support'
-        className='bg-white rounded-full  w-16 h-16 flex justify-center items-center cursor-pointer'>
-          <BsQuestion size={40}  />
-        </div>
-        <div
+        className='bg-white rounded-full  w-14 h-14 flex justify-center items-center cursor-pointer'>
+          <BsQuestion size={30}  />
+        </Link>
+        {/* <Link to='/dashboard/notification'
          data-tooltip-id='notification' 
          className='bg-white rounded-full  flex w-16 h-16 justify-center items-center cursor-pointer'>
           <BiBell size={30}/>
-        </div>
+        </Link> */}
         <div 
          to='/settings'
          ref={profileRef} 

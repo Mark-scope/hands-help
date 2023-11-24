@@ -1,5 +1,5 @@
 //Auth token we will use to generate a meeting and connect to it
-export const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlrZXkiOiI1M2MwYjIzYy03MzE2LTRiZmMtODkzMy03NzczNjQ1NjkyNTciLCJwZXJtaXNzaW9ucyI6WyJhbGxvd19qb2luIl0sImlhdCI6MTcwMDAwMzA2NiwiZXhwIjoxNzAwNjA3ODY2fQ.1FS3mSEOo-CT2ymwv8ViRmRsOfmrM7P5isxlz-g3_eE";
+export const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlrZXkiOiI1M2MwYjIzYy03MzE2LTRiZmMtODkzMy03NzczNjQ1NjkyNTciLCJwZXJtaXNzaW9ucyI6WyJhbGxvd19qb2luIl0sImlhdCI6MTcwMDc0NDUxMSwiZXhwIjoxNzAxMzQ5MzExfQ.lcbcj18fvfnekzlufiWo7v1532KXyBUdZ08TnWZgdvU";
 // API call to create meeting
 export const createMeeting = async ({ token }) => {
   const res = await fetch(`https://api.videosdk.live/v2/rooms`, {

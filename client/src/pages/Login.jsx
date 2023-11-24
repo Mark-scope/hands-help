@@ -28,9 +28,9 @@ function Login() {
   return (
     <div className='bg-[#fff] w-full h-[100vh] flex items-center justify-center overflow-hidden'>     
         {/* LEFT  */}
-        <div className='w-full lg:w-1/2 h-full px-32 py-10 2xl:px-20 flex flex-col justify-center'> 
+        <div className='w-full lg:w-1/2 h-full lg:px-32 px-8 py-10 2xl:px-20 flex flex-col justify-center'> 
             <div className='w-full flex gap-2 items-center mb-20 justify-center'>
-              <img src={logo} alt='logo' />
+              <img src={logo} alt='logo' className='w-44' />
               
             </div>
 

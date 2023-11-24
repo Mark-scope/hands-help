@@ -8,6 +8,7 @@ module.exports = {
       primary: "rgb(var(--color-primary) / <alpha-value>)",
       secondary: "rgb(var(--color-secondary) / <alpha-value>)",
       blue: "#122067",
+      blue2: "#414D85",
       white: "rgb(var(--color-white) / <alpha-value>)",
       LGray: "#969696",
       Red: "#D32B3F",

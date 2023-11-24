@@ -1,32 +1,27 @@
 import React from 'react';
 import { AiOutlineClose } from "react-icons/ai";
+import { IoClose } from 'react-icons/io5';
 
 
 function Notification() {
   return (
-    <div className='m-[20px] px-[20px] py-[60px] md:p-[60px] bg-white rounded '>
-      <h3 className='text-blue text-[24px] font-semibold '>Notifications</h3>
-      <div className=' flex space-x-4 w-full justify-between mt-4 px-5 py-5 bg-white rounded-[10px] items-center shadow inline-flex'>
-        <p>Lorem ipsum dolor sit amet, consectetur adip iscing elit, sed do eiusmod</p>
-        <img src={AiOutlineClose} className="w-5 h-5 relative" />
+    <div className='bg-white h-screen'>
+    <div className='flex justify-between gap-10 flex-col item-center w-full md:px-40 px-6'>
+        <div className='flex flex-col gap-5 items-center w-full '>
+            <h1 className='text-2xl font-semibold pt-10'>Notification</h1>
+        </div>
+      <div className='flex flex-col gap-2'>
+            {[...Array(1)].map((_, index) => (
+                  <div key={index} className='bg-white py-6 px-6 rounded-lg flex gap-5 items-center justify-between shadow-lg border-[0.1px] border-[#C4C4C4]'>
+                  <p className='text-blue'>
+                      Expect update next month
+                  </p>
+                  <IoClose size={30}/>
+              </div>
+            ))}
       </div>
-      <div className=' flex space-x-4 w-full justify-between mt-4 px-5 py-5 bg-white rounded-[10px] items-center shadow inline-flex'>
-        <p>Lorem ipsum dolor sit amet, consectetur adip iscing elit, sed do eiusmod</p>
-        <img src={AiOutlineClose} className="w-5 h-5 relative" />
-      </div>
-      <div className=' flex space-x-4 w-full justify-between mt-4 px-5 py-5 bg-white rounded-[10px] items-center shadow inline-flex'>
-        <p>Lorem ipsum dolor sit amet, consectetur adip iscing elit, sed do eiusmod</p>
-        <img src={AiOutlineClose} className="w-5 h-5 relative" />
-      </div>
-      <div className=' flex space-x-4 w-full justify-between mt-4 px-5 py-5 bg-white rounded-[10px] items-center shadow inline-flex'>
-        <p>Lorem ipsum dolor sit amet, consectetur adip iscing elit, sed do eiusmod</p>
-        <img src={AiOutlineClose} className="w-5 h-5 relative" />
-      </div>
-      <div className=' flex space-x-4 w-full justify-between mt-4 px-5 py-5 bg-white rounded-[10px] items-center shadow inline-flex'>
-        <p>Lorem ipsum dolor sit amet, consectetur adip iscing elit, sed do eiusmod</p>
-        <img src={AiOutlineClose} className="w-5 h-5 relative" />
-      </div>
-    </div>      
+    </div>
+</div>     
   )
 }
 

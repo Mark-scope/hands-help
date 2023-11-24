@@ -3,6 +3,7 @@ import Btn from '../component/CustomButton.jsx';
 import home1 from '../assets/images/image1.png'
 import home2 from '../assets/images/image2.png'
 import home3 from '../assets/images/image3.png'
+import home4 from '../assets/images/hands-help.jpg'
 import logo from '../assets/logo.png'
 import { Link } from 'react-router-dom';
 // import HiOutlineMenuAlt2 from 'react-icons'
@@ -11,19 +12,19 @@ const Home = () => {
   return (
     <div className='w-full relative'>
       {/* Navbar */}
-      <nav className='  barder-b border-gray-100 absolute top-0 left-0 right-0' >
-        <div className=' py-5 md:px-12 md:flex md:items-center md:justify-between w-full'>
-          <div className='flex items-center justify-between'>
-            <a className='flex items-center'>
+      <nav className=' absolute top-0 left-0 right-0' >
+        <div className=' py-1 md:px-12 px-4 md:flex md:items-center md:justify-between w-full'>
+          <div className='flex items-center gap-4 justify-between w-full'>
+            <Link to='/' className='flex items-center'>
               <img src={logo} className='w-[100px]' alt="" />
-            </a>
-          </div>
-          <div>
-            <ul className='p-5 z-10 absolute bg-white/80 backdrop-blur w-full left-0 py-4 opacity-0 top-[-400px] 
-            transition-all ease-in duration-500 md:p-0 md:flex md:items-center md:space-x-8 md:static md:w-auto 
-            md:opacity-100'>
+            </Link>
+            <ul className='p-5 z-10 bg-white/80 backdrop-blur w-full 
+             
+             
+            transition-all ease-in duration-500  flex items-center gap-4 justify-end
+           '>
 
-              <li className='md:my-0'>
+              <li className=''>
                 <Link to='/login'>
                   <Btn 
                     title='Log in' 
@@ -33,7 +34,7 @@ const Home = () => {
                     onClick='' />
                 </Link>
               </li>
-              <li className='md:my-0'>
+              <li className=''>
                 <Link to='/register'>
                   <Btn 
                       title='Sign Up' 
@@ -46,6 +47,8 @@ const Home = () => {
 
             </ul>
           </div>
+          <div>
+          </div>
 
         </div>
 
@@ -54,18 +57,18 @@ const Home = () => {
 
 
       {/* Hero section */}
-      <div className='flex flex-auto w-full h-screen gap-10 p-10 '>
+      <div className='flex md:flex-row flex-col gap-10 px-10 pt-32'>
         {/* texts */}
-        <div className='flex w-full flex-col justify-center px-12'>
+        <div className='flex w-full flex-col md:px-6'>
 
-          <h1 className='text-5xl py-4 font-bold leading-snug text-blue'>Empowering Connections,<br></br> Bridging Worlds</h1>
+          <h1 className='md:text-5xl text-3xl py-4 font-bold leading-2- text-blue'>Empowering Connections,<br />Bridging Worlds</h1>
           <h3 className='text-3xl py-4 font-semibold text-blue mx'>Where Community Meets Compassion</h3>
           <p className='text-ascent py-3'>Welcome to HandsHelp Connect, HandsHelp Connect unites
             the deaf and mute community with compassionate volunteers, 
             ensuring no one feels unheard. Join us in fostering equality 
             through communication.</p>
           <Btn 
-            title='Join Community' 
+            title='Download App' 
             containerStyles='bg-blue px-8 py-4 my-8 text-white w-fit hover:secondary hover:drop-shadow-md transition duration-300 ease-in-out ' 
             iconRight='' 
             type='button' 
@@ -74,33 +77,44 @@ const Home = () => {
         </div>
 
         {/* pics */}
-        <div className='flex justify-center w-full  pt-28 overflow-hidden'>
-          <div className=''>
-            <img src={home1} alt="" className='mx-3 my-5' />
-            <img src={home2} alt="" />
-          </div>
-          <div>
-            <img src={home3} alt="" className='mx-3 my-5'/>
-            <img src={home3} alt="" />
-          </div>
+        <div className='flex w-full gap-4 overflow-hidden lg:h-screen mb-10'>
+            <div className='flex flex-col gap-3 w-full justify-start h-fit'>
+                <div className='bg-Red lg:w-72 md:w-44 w-32 lg:h-80 overflow-hidden'>
+                    <img src={home1} className='w-full'/>
+                </div>
+                <div className='bg-Red lg:w-72 md:w-44 w-32'>
+                    <img src={home2} className='w-full md:h-full h-fit'/>
+                </div>
+            </div>
+            <div className='flex flex-col gap-3 w-full justify-start h-fit'>
+                <div className='bg-Red  lg:w-72 lg:h-80 w-32 md:w-44 overflow-hidden'>
+                    <img src={home3} className='lg:w-full h-fit'/>
+                </div>
+                <div className='bg-Red lg:w-72 lg:h-fit md:w-44 w-32'>
+                    <img src={home4} className='w-full h-fit'/>
+                </div>
+            </div>
+            
+           
+            
         </div>
 
 
       </div>
 
       {/* stats */}
-      <div className='bg-blue p-20 flex justify-between'>
+      <div className='bg-blue md:p-20 p-10 flex md:justify-between md:flex-rol flex-col gap-5 justify-center'>
         <div className='flex items-center'>
-          <h5 className='text-3xl text-white '>Trusted by over 1,000+ Users and Volunteers Worldwide</h5>
+          <h5 className='md:text-3xl text-xl text-white '>Trusted by over 1,000+ Users and Volunteers Worldwide</h5>
         </div>
 
-        <div className='flex justify-evenly w-1/2'>
+        <div className='flex lg:justify-evenly justify-between md:w-1/2'>
           <div>
-            <h3 className='text-5xl  font-semibold text-white'>400+</h3>
-            <p className='text-2xl py-2 font-normal text-white'>Users</p>
+            <h3 className='md:text-5xl text-3xl  font-semibold text-white'>400+</h3>
+            <p className='md:text-2xl text-lg py-2 font-normal text-white'>Users</p>
           </div>
           <div>
-            <h3 className='text-5xl font-semibold text-white'>700+</h3>
+            <h3 className='md:text-5xl text-3xl font-semibold text-white'>700+</h3>
             <p className='text-2xl py-2 font-normal text-white'>Volunteers</p>
           </div>
 

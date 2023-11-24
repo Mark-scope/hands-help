@@ -1,5 +1,5 @@
 import {  Outlet, Navigate, Route, Routes, useLocation } from 'react-router-dom';
-import { Dashboard, Home, Login, Register, ResetPassword, Settings, MakeACall } from './pages';
+import { Dashboard, Home, Login, Register, ResetPassword, Settings, MakeACall,AnswerCall, VDashboard, Vnotification, HowItWorks, Contact, CallSearch } from './pages';
 import { useSelector } from 'react-redux';
 
 
@@ -27,9 +27,17 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/register' element={<Register />} />
         <Route path='/makeacall' element={<MakeACall />} />
+        <Route path='/volunteer-dashboard' element={<VDashboard />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/dashboard/notification' element={<Vnotification />} />
+        <Route path='/howitworks' element={<HowItWorks />} />
         <Route path='/login' element={<Login />} />
         <Route path='/reset-password' element={<ResetPassword />} />
-        <Route path='/settings' element={<Settings />} />
+        <Route path='/volunteer-dashboard/settings' element={<Settings />} />
+        <Route path='/volutenteer-dashboard/how-it-works' element={<HowItWorks />} />
+        <Route path='/volunteer-dashboard/contact' element={<Contact />} />
+        <Route path='/volunteer-dashboard/answercall' element={<AnswerCall />} />
+        <Route path='/dashboard/call-search' element={<CallSearch />} />
         
       </Routes>
     </div>
