@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import user from '../assets/images/image2.png';
 import { IoCallOutline, IoLocation, IoMail } from 'react-icons/io5';
 
-const Profile = ({edit, setEdit}) => {
+const Profile = ({edit, setEdit, user}) => {
     // const [menuActive, setMenuActive] = useState(false);
     return (
         <div>
@@ -15,10 +15,10 @@ const Profile = ({edit, setEdit}) => {
                                 className='w-32 h-32 rounded-full cursor-pointer bg-blue p-1 absolute'
 
                             >
-                                <img src={user} className='w-full h-full object-cover rounded-full' />
+                                <img src={user.profileUrl} className='w-full h-full object-cover rounded-full' />
                             </div>
                             <div className='text-center bg-white shadow-lg pt-20 mt-16 pb-8 w-full rounded-lg'>
-                                <h1 className='text-3xl font-semibold pb-4'>Lily Gray</h1>
+                                <h1 className='text-3xl font-semibold pb-4'>{user.fullName}</h1>
                    
                             </div>
                         </div>
@@ -29,15 +29,15 @@ const Profile = ({edit, setEdit}) => {
                             <div className='flex flex-col gap-4'>
                                 <div className='flex gap-4 text-white items-center'>
                                     <IoCallOutline size={20} />
-                                    <p>+233 45 0210393</p>
+                                    <p>{user.phone}</p>
                                 </div>
                                 <div className='flex gap-4 text-white items-center'>
                                     <IoMail size={20} />
-                                    <p>lilygray@gmail.com</p>
+                                    <p>{user.email}</p>
                                 </div>
                                 <div className='flex gap-4 text-white items-center'>
                                     <IoLocation size={20} />
-                                    <p>Adum, Kuamsi, Ghana</p>
+                                    <p>{user.location}</p>
                                 </div>
                             </div>
                         </div>

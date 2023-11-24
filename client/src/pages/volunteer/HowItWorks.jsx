@@ -1,12 +1,14 @@
 import React from 'react' 
 import TopBar from '../../component/TopBar'
 import heropic from '../../assets/images/hands-help.jpg'
+import { useSelector } from 'react-redux';
 
 function HowItWorks() {
+    const { user } = useSelector(state => state.user);
   return (
-    <div className='h-screen'>
+    <div className='h-screen bg-bgColor1'>
         <div className='px-6 py-4 shadow'>
-            <TopBar   />
+            <TopBar  user={user[1]}/>
         </div>
 
         <div className='flex flex-col items-center ' >

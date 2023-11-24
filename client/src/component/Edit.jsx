@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import TextInput from '../component/TextInput';
 import CustomButton from '../component/CustomButton';
 import Loading from './Loading';
-import { user } from '../assets';
 import { useForm } from "react-hook-form";
 import { useDispatch } from 'react-redux';
 import userImage from '../assets/images/image2.png';
 import { NoProfile } from '../assets';
 
-function Edit() {
+function Edit({ user }) {
   const {
     register: registerPersonal,
     handleSubmit: handleSubmitPersonal,
@@ -32,7 +31,7 @@ function Edit() {
   const [errMsg, setErrMsg] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const dispatch = useDispatch();
-  const [imagePreview, setImagePreview] = useState(userImage);
+  const [imagePreview, setImagePreview] = useState(user.profileUrl);
   const [selectedImage, setSelectedImage] = useState(null);
   const inputRef = React.useRef(null); // Define the inputRef
 
@@ -66,12 +65,12 @@ function Edit() {
           {user ? (
             <img src={imagePreview} alt='User' className='w-[140px] h-[140px] rounded-full object-cover' />
           ) : (
-            <img src={NoProfile} alt='No Profile' className='w-[140px] h-[140px] rounded-full object-cover ' />
+            <img src={user.profileUrl} alt='No Profile' className='w-[140px] h-[140px] rounded-full object-cover ' />
           )}
         </div>
         <div className='flex flex-col justify-center md:items-start items-center mt-5'>
-          <h5>Jane Appiah</h5>
-          <p>janeappiah3@gmail.com</p>
+          <h5>{user.fullName}</h5>
+          <p>{user.email}</p>
           <div className='flex'>
             <input
               type="file"
@@ -117,7 +116,7 @@ function Edit() {
             name="fullName"
             placeholder="Full Name"
             styles="w-full h-12"
-            value="Jane Appiah"
+            value={user.fullName}
             {...registerPersonal("fullName")}
           />
 
@@ -127,13 +126,13 @@ function Edit() {
               name="email"
               placeholder="Email"
               styles="w-full h-12"
-              value="janeappiah3@gmail.com"
+              value={user.email}
               {...registerPersonal("email")}
             />
             <TextInput
               type="phone"
               name="phone"
-              value="0552345678"
+              value={user.phone}
               placeholder="Phone Number"
               styles="w-full h-12"
               {...registerPersonal("phone")}
@@ -143,7 +142,7 @@ function Edit() {
           <TextInput
             type="text"
             name="Location"
-            value="Accra, Ghana"
+            value={user.location}
             placeholder="Location"
             styles="w-full h-12 "
             {...registerPersonal("location")}
@@ -166,13 +165,14 @@ function Edit() {
       </div>
 
       {/* Emergency Contact */}
-  
 
-{/* Emergency Contact */}
-<div className='pt-[40px]'>
-  <h4 className='text-blue'>Emergency Contact</h4>
-  <form onSubmit={handleSubmitEmergency(onSubmit)} className='flex flex-col gap-3'>
-  <TextInput
+
+      {/* Emergency Contact */}
+      {user.accountType === "user" && (
+        <div className='pt-[40px]'>
+        <h4 className='text-blue'>Emergency Contact</h4>
+        <form onSubmit={handleSubmitEmergency(onSubmit)} className='flex flex-col gap-3'>
+          <TextInput
             type="text"
             name="fullName"
             placeholder="Full Name"
@@ -200,7 +200,7 @@ function Edit() {
             />
           </div>
 
-        
+
           {/* Error Message if something goes wrong */}
           {
             errorsPersonal && errorsPersonal.fullName && (
@@ -215,8 +215,9 @@ function Edit() {
               title='Save'
             />
           }
-  </form>
-</div>
+        </form>
+      </div>
+      )}
 
 
     </div>

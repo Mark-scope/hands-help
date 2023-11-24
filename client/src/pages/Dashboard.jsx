@@ -10,13 +10,14 @@ import {
   health
 } from '../assets/icons/index';
 import { NoProfile } from '../assets';
-import { user } from '../assets';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { AiFillCloseCircle, AiOutlineClose } from 'react-icons/ai';
 
 
 const Dashboard = () => {
+  const { user } = useSelector(state => state.user);
+
   const [active, setActive] = useState('All');
   const [model, setModel] = useState(null);
   const { theme } = useSelector((state) => state.theme);
@@ -117,7 +118,7 @@ const Dashboard = () => {
   return (
     <div data-theme={theme}
       className='bg-[#F6F7FC] lg:p-10 p-5'>
-      <TopBar />
+        <TopBar user={user[0]}/>
       {/* Main section  */}
       <div className=' w-full text-white flex lg:flex-row flex-col gap-10 mt-8'>
         <div
@@ -130,7 +131,7 @@ const Dashboard = () => {
               <h1 className='text-white lg:text-3xl'> Call Volunteer</h1>
             </Link>
 
-            <Link to='/volunteer-dashboard/contact'>
+            <Link to='/dashboard/contact'>
               <div className='flex  flex-col gap-2 bg-[#2BA4E7] px-4 w-96 py-12 rounded-lg items-center cursor-pointer sd'>
                 <RiCustomerService2Line size={50} />
                 <h1 className='text-white lg:text-3xl'> Need Assistance</h1>

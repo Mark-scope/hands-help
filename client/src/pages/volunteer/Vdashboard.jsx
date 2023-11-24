@@ -2,14 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import mask from '../../assets/Mask-group.png';
 import heropic from '../../assets/images/hands-help31.png';
 import { IoCallOutline } from 'react-icons/io5';
-import Vsidebar from '../../component/Vsidebar';
-import Vheader from '../../component/vHeader';
 import TopBar from '../../component/TopBar';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function VDashboard() {
   const [menuActive, setMenuActive] = useState(false);
   const sidebarRef = useRef(null);
+  const { user } = useSelector(state => state.user);
 
 
   useEffect(() => {
@@ -29,7 +29,7 @@ function VDashboard() {
   return (
     <div className='relative h-screen'>
     <div className='bg-[#F6F7FC] p-5'>
-         <TopBar />
+         <TopBar user={user[1]}/>
     </div>
     
       {/* hero bar */}
@@ -57,7 +57,7 @@ function VDashboard() {
 
         {/* how it works */}
         <div className='md:w-1/2 m-6  flex items-center'>
-          <Link to='/volutenteer-dashboard/how-it-works'
+          <Link to='/dashboard/how-it-works'
             className='w-full py-14 px-5 rounded-xl bg-top bg-cover bg-no-repeat h-52 flex items-center '
             style={{
               backgroundImage: `url(${mask})`,

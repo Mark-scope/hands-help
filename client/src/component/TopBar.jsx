@@ -11,7 +11,7 @@ import ProfilePopUp from './ProfilePopUp.jsx'
 import { Tooltip as ReactTooltip } from 'react-tooltip';
 import { Link } from 'react-router-dom'
 
-const TopBar = () => {
+const TopBar = ({user}) => {
   const [toggle, setToggle] = useState(false);
   const profileRef = useRef(null);
 
@@ -33,7 +33,7 @@ const TopBar = () => {
 
   return (
     <div className='flex justify-between items-center relative '>
-      <Link to='/volunteer-dashboard'>
+      <Link to='/dashboard'>
          <img src={logo} className='w-[100px]' />
       </Link>
 
@@ -51,7 +51,7 @@ const TopBar = () => {
       </div> */}
 
       <div className='flex items-center lg:gap-5 gap-2'>
-        <Link to='/volunteer-dashboard/contact'
+        <Link to='/dashboard/contact'
         data-tooltip-id='support'
         className='bg-white rounded-full  w-14 h-14 flex justify-center items-center cursor-pointer'>
           <BsQuestion size={30}  />
@@ -66,7 +66,7 @@ const TopBar = () => {
          ref={profileRef} 
          data-tooltip-id='profile'
          className='bg-white rounded-full w-16 h-16 flex justify-center items-center cursor-pointer'>
-         <img src={user} className='w-14 h-14 object-cover rounded-full'
+         <img src={user.profileUrl} className='w-14 h-14 object-cover rounded-full'
          onClick={() => setToggle(!toggle)}
           />
         </div>
@@ -75,7 +75,7 @@ const TopBar = () => {
         <ReactTooltip id='profile' place='bottom' content='Profile' />
       </div>
 
-      {toggle && <ProfilePopUp />}
+      {toggle && <ProfilePopUp user={user}/>}
     </div>
   )
 }

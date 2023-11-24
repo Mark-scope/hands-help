@@ -6,6 +6,8 @@ import Edit from '../component/Edit';
 import ChangePassword from '../component/ChangePassword';
 import { FaArrowLeft } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { TopBar } from '../component';
 
 const SideMenu = [
   {
@@ -25,6 +27,8 @@ function Settings() {
   const [edit, setEdit] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const profileRef = useRef(null);
+  const { user } = useSelector(state => state.user);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (profileRef.current && !profileRef.current.contains(event.target)) {
@@ -46,9 +50,10 @@ function Settings() {
 
   return (
     <div>
-      <div className='p-5
-      '>
-
+      <div>
+      <div className='bg-[#F6F7FC] p-5'>
+         <TopBar user={user[0]}/>
+      </div>
       </div>
       <div className='flex md:flex-row flex-col flex-nowrap flex-auto h-screen bg-bgColor1 overflow-auto'>
         {/* Sidebar */}
@@ -68,12 +73,12 @@ function Settings() {
 
           {/* phones */}
           <div className=' md:hidden flex justify-start items-center bg-white h-12 relative' ref={profileRef}>
-           
+
             <div className='flex w-full justify-between items-center px-8'>
-            <div onClick={goBack}>
-               <FaArrowLeft  size={30} />
-            </div>
-            
+              <div onClick={goBack}>
+                <FaArrowLeft size={30} />
+              </div>
+
               < GiHamburgerMenu size={30} className={`ml-7`}
                 onClick={() => setShowMenu(!showMenu)} />
               {showMenu && (
@@ -96,7 +101,7 @@ function Settings() {
               )}
 
             </div>
-           
+
           </div>
 
           <div className='flex-col md:hidden hidden m-[10px]  bg-white rounded justify-center items-center p-[40px] '>
@@ -114,9 +119,14 @@ function Settings() {
 
         <main className='md:w-3/4 wrap flex-auto' >
           {/* Profile */}
-          {active === 'Profile' &&
-            (edit ? <Edit /> : <Profile edit={edit} setEdit={setEdit} />)
-          }
+          {active === 'Profile' && user[0] && (
+            edit ? (
+              <Edit user={user[0].accountType === 'volunteer' ? user[1] : user[0]} />
+            ) : (
+              <Profile edit={edit} setEdit={setEdit} user={user[0].accountType === 'volunteer' ? user[1] : user[0]}/>
+            )
+          )}
+
 
           {/* Notification */}
           {active === 'Notification' && <Notification />}
