@@ -18,10 +18,7 @@ const Home = () => {
             <Link to='/' className='flex items-center'>
               <img src={logo} className='w-[100px]' alt="" />
             </Link>
-            <ul className='p-5 z-10 bg-white/80 backdrop-blur w-full 
-             
-             
-            transition-all ease-in duration-500  flex items-center gap-4 justify-end
+            <ul className='p-5 z-10 bg-white/80 backdrop-blur w-full transition-all ease-in duration-500  flex items-center gap-4 justify-end
            '>
 
               <li className=''>
@@ -57,9 +54,9 @@ const Home = () => {
 
 
       {/* Hero section */}
-      <div className='flex md:flex-row flex-col gap-10 px-10 pt-32'>
+      <div className='flex md:flex-row item flex-col gap-10 px-10 pt-32'>
         {/* texts */}
-        <div className='flex w-full flex-col md:px-6'>
+        <div className='flex w-full flex-col md:px-6 md:pt-32'>
 
           <h1 className='md:text-5xl text-3xl py-4 font-bold leading-2- text-blue'>Empowering Connections,<br />Bridging Worlds</h1>
           <h3 className='text-3xl py-4 font-semibold text-blue mx'>Where Community Meets Compassion</h3>
@@ -78,20 +75,20 @@ const Home = () => {
 
         {/* pics */}
         <div className='flex w-full gap-4 overflow-hidden lg:h-screen mb-10'>
-            <div className='flex flex-col gap-3 w-full justify-start h-fit'>
-                <div className='bg-Red lg:w-72 md:w-44 w-32 lg:h-80 overflow-hidden'>
+            <div className='flex flex-col gap-2 w-full justify-start md:h-[40rem] overflow-hidden'>
+                <div className='md:h-[20rem] overflow-hidden'>
                     <img src={home1} className='w-full'/>
                 </div>
-                <div className='bg-Red lg:w-72 md:w-44 w-32'>
-                    <img src={home2} className='w-full md:h-full h-fit'/>
+                <div className='md:h-[20rem] overflow-hidden'>
+                    <img src={home2} className='w-full'/>
                 </div>
             </div>
-            <div className='flex flex-col gap-3 w-full justify-start h-fit'>
-                <div className='bg-Red  lg:w-72 lg:h-80 w-32 md:w-44 overflow-hidden'>
-                    <img src={home3} className='lg:w-full h-fit'/>
+            <div className='flex flex-col gap-3 w-full justify-start md:h-[40rem] overflow-hidden'>
+            <div className='md:h-[25rem] overflow-hidden'>
+                    <img src={home4} className='w-full'/>
                 </div>
-                <div className='bg-Red lg:w-72 lg:h-fit md:w-44 w-32'>
-                    <img src={home4} className='w-full h-fit'/>
+                <div className='md:h-[20rem] overflow-hidden'>
+                    <img src={home3} className='w-full'/>
                 </div>
             </div>
             

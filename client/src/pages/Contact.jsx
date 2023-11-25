@@ -53,7 +53,7 @@ function Contact() {
                 styles="w-full"
                 register={{
                   ...register("subject", {
-                    required: "Subject Address is required",
+                    required: "Subject is required",
                   }),
                 }}
                 error={errors.subject ? errors.subject.message : ''}

@@ -13,7 +13,7 @@ export const user = [{
     updatedAt: "2023-08-21T06:46:26.798Z",
     profileUrl: profile1,
     token: "hZWFmZmU3NmMiLCJpYXQiOjE2OTIwMzY5",
-    EmergencyPerson: {
+    emergencyPerson: {
       _id: "64df3aec4180b81adfe41d32",
       fullName: 'Divine Akwasi',
       email: "divineakwasi@gmail.com",
@@ -32,7 +32,7 @@ export const user = [{
     updatedAt: "2023-08-21T06:46:26.798Z",
     profileUrl: profile2,
     token: "hZWFmZmU3NmMiLCJpYXQiOjE2OTIwMzY5",
-    EmergencyPerson: {}
+    emergencyPerson: {}
   },
 
 

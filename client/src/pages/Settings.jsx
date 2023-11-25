@@ -82,7 +82,7 @@ function Settings() {
               < GiHamburgerMenu size={30} className={`ml-7`}
                 onClick={() => setShowMenu(!showMenu)} />
               {showMenu && (
-                <div className='absolute top-4 left-10 z-20 shadow flex-col m-[10px]  bg-white rounded justify-center items-center p-[20px] '>
+                <div className='absolute top-4 right-10 z-20 shadow flex-col m-[10px]  bg-white rounded justify-center items-center p-[20px] '>
                   {SideMenu.map((item, index) => (
                     <div key={index} className={`flex justify-center w-full items-center space-x-3 hover:bg-[#2BA4E71F] cursor-pointer p-2 ${active == item.name ? 'bg-[#2BA4E71F]' : 'border-b border-[#7272721f]'}`
                     }

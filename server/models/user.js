@@ -16,14 +16,21 @@ const userScheme = new mongoose.Schema(
             required: [true, "Password is required!"],
             minlenth: [6, "Password length should be greater than 6 character!"]
         },
+        phone: { type: String },
         location: { type: String },
-        type: { 
-            type: String, 
-            default: "user"
+        accountType: {
+            type: String,
+        },
+        token: { type: String },
+        EmergencyPerson: {
+            _id: { type: String },
+            fullName: { type: String },
+            email: { type: String },
         },
         profileUrl: { type: String },
         verified: { type: Boolean, default: false }
     },
+    
     { timestamps: true }
 );
 
